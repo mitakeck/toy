@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  "https://github.com/#{repo_name}.git"
+end
+
 gem 'coffee-rails', '4.2.1'
 gem 'jbuilder',     '2.4.1'
 gem 'jquery-rails', '4.1.1'
